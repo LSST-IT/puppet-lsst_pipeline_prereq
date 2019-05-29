@@ -1,0 +1,41 @@
+---
+lsst_pipeline_prereq::packages:
+  - bison
+  - blas
+  - bzip2
+  - bzip2-devel
+  - cmake
+  - curl
+  - flex
+  - fontconfig
+  - freetype-devel
+  - gawk
+  - gcc-c++
+  - gcc-gfortran
+  - gettext
+  - git
+  - glib2-devel
+  - java-1.8.0-openjdk
+  - libcurl-devel
+  - libuuid-devel
+  - libXext
+  - libXrender
+  - libXt-devel
+  - make
+  - mesa-libGL
+  - ncurses-devel
+  - openssl-devel
+  - patch
+  - perl
+  - perl-ExtUtils-MakeMaker
+  - readline-devel
+  - sed
+  - tar
+  - which
+  - zlib-devel
+  - devtoolset-6-gcc-gfortran
+  - devtoolset-6-gcc
+  - devtoolset-6-gcc-c++
+
+lsst_pipeline_prereq::scl_yumrepo_baseurl: http://mirror.centos.org/centos/7/sclo/$basearch/rh/
+
