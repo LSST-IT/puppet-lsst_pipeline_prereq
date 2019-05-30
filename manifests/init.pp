@@ -11,14 +11,14 @@ class lsst_pipeline_prereq (
 ) {
 
   ensure_resource('yumrepo', 'centos-sclo-rh', {
-    'ensure'      => 'present',
-    'baseurl'     => $scl_yumrepo_baseurl,
-    'descr'       => 'CentOS-7 - SCLo rh',
-    'enabled'     => 1,
-    'gpgcheck'    => 0,
-    'gpgkey'      => 'absent',
-#    'gpgkey'   => $scl_yumrepo_gpgkeyurl,
-    'mirrorslist' => 'absent',
+    'ensure'     => 'present',
+    'baseurl'    => $scl_yumrepo_baseurl,
+    'descr'      => 'CentOS-7 - SCLo rh',
+    'enabled'    => 1,
+    'gpgcheck'   => 0,
+    'gpgkey'     => 'absent',
+#    'gpgkey'     => $scl_yumrepo_gpgkeyurl,
+    'mirrorlist' => 'absent',
   })
 
   exec { "clean centos-sclo-rh yum repo":
