@@ -17,12 +17,22 @@ class lsst_pipeline_prereq (
     'enabled' => 1,
     'gpgcheck' => 0,
 #    'gpgkey' => $scl_yumrepo_gpgkeyurl,
+    'notify' => "Exec['clean centos-sclo-rh yum repo']",
   })
+
+  exec { "clean centos-sclo-rh yum repo":
+    refreshonly => true,
+    path    => '/bin/:/sbin/:/usr/bin/:/usr/sbin/',
+    command => 'yum clean all --disablerepo=* --enablerepo=centos-sclo-rh',
+    require => [
+      Yumrepo['centos-sclo-rh'],
+    ],
+  }
 
   Package {
     require => Yumrepo['centos-sclo-rh'],
   }
  
- ensure_packages( $packages, {'ensure' => 'present'} )
+  ensure_packages( $packages, {'ensure' => 'present'} )
 
 }
