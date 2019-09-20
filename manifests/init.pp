@@ -37,4 +37,11 @@ class lsst_pipeline_prereq (
  
   ensure_packages( $packages, {'ensure' => 'present'} )
 
+  ## REMOVE SETUID ON SYSTEMTAP BINARIES FROM DEVTOOLSET
+  exec { 'remove_setuid_on_systemtap_binaries_devtoolset':
+    path => ["/bin", "/usr/bin", "/usr/sbin"],
+    onlyif  => 'test `find /opt/rh/devtoolset-*/root/usr/bin/ -perm /4000 | wc -l` -gt 0',
+    command => 'find /opt/rh/devtoolset-*/root/usr/bin/ -perm /4000 -exec chmod u-s "{}" \;',
+  }
+
 }
