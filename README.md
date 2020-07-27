@@ -21,7 +21,7 @@ Puppet module for installing prerequisites for the LSST Pipeline.
 
 The module installs prerequisites for the LSST Pipeline. See the following for current prerequisites:
 
-  * https://pipelines.lsst.io/install/prereqs/centos.html
+  * https://pipelines.lsst.io/install/prereqs.html#system-prereqs
 
 ### Setup Requirements
 
