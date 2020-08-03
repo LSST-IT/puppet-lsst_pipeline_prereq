@@ -42,9 +42,6 @@ lsst_pipeline_prereq::packages:
   - devtoolset-8-gcc
   - devtoolset-8-gcc-gfortran
   - devtoolset-8-gcc-c++
-  - devtoolset-9-gcc
-  - devtoolset-9-gcc-c++
-  - devtoolset-9-gcc-gfortran
 
 lsst_pipeline_prereq::scl_yumrepo_baseurl: http://mirror.centos.org/centos/7/sclo/$basearch/rh/
 
