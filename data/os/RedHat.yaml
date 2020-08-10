@@ -38,4 +38,3 @@ lsst_pipeline_prereq::packages:
   - devtoolset-8-gcc-c++
 
 lsst_pipeline_prereq::scl_yumrepo_baseurl: http://mirror.centos.org/centos/7/sclo/$basearch/rh/
-

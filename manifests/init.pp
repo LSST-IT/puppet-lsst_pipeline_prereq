@@ -21,7 +21,7 @@ class lsst_pipeline_prereq (
     'mirrorlist' => 'absent',
   })
 
-  exec { "clean centos-sclo-rh yum repo":
+  exec { 'clean centos-sclo-rh yum repo':
     subscribe   => Yumrepo['centos-sclo-rh'],
     refreshonly => true,
     path        => '/bin/:/sbin/:/usr/bin/:/usr/sbin/',
@@ -34,12 +34,12 @@ class lsst_pipeline_prereq (
   Package {
     require => Yumrepo['centos-sclo-rh'],
   }
- 
+
   ensure_packages( $packages, {'ensure' => 'present'} )
 
   ## REMOVE SETUID ON SYSTEMTAP BINARIES FROM DEVTOOLSET
   exec { 'remove_setuid_on_systemtap_binaries_devtoolset':
-    path => ["/bin", "/usr/bin", "/usr/sbin"],
+    path    => ['/bin', '/usr/bin', '/usr/sbin'],
     onlyif  => 'test `find /opt/rh/devtoolset-*/root/usr/bin/ -perm /4000 | wc -l` -gt 0',
     command => 'find /opt/rh/devtoolset-*/root/usr/bin/ -perm /4000 -exec chmod u-s "{}" \;',
   }
